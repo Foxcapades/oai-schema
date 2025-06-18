@@ -24,8 +24,12 @@ allows referencing them in a fragment's `$schema` definition.
 [source, json]
 ----
 {
-  "$schema": "https://foxcapades.github.io/oai-schema/3.1.1/2025-02-03/response.json",
+  "$schema": "https://foxcapades.github.io/oai-schema/3.1.1/2025-02-13/response.json",
   "description": "blah",
   "content": { ... }
 }
 ----
+
+== Available Versions
+
+* link:https://foxcapades.github.io/oai-schema/3.1.1/2025-02-13[v3.1.1 - 2025-02-13]
