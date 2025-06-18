@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "https://spec.openapis.org/oas/v3.1#components-object",
+  "type": "object",
+  "properties": {
+    "schemas": {
+      "type": "object",
+      "additionalProperties": { "$dynamicRef": "#meta" }
+    },
+    "responses": {
+      "type": "object",
+      "additionalProperties": { "$ref": "response-or-reference.json" }
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": { "$ref": "parameter-or-reference.json" }
+    },
+    "examples": {
+      "type": "object",
+      "additionalProperties": { "$ref": "example-or-reference.json" }
+    },
+    "requestBodies": {
+      "type": "object",
+      "additionalProperties": { "$ref": "request-body-or-reference.json" }
+    },
+    "headers": {
+      "type": "object",
+      "additionalProperties": { "$ref": "header-or-reference.json" }
+    },
+    "securitySchemes": {
+      "type": "object",
+      "additionalProperties": { "$ref": "security-scheme-or-reference.json" }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": { "$ref": "link-or-reference.json" }
+    },
+    "callbacks": {
+      "type": "object",
+      "additionalProperties": { "$ref": "callbacks-or-reference.json" }
+    },
+    "pathItems": {
+      "type": "object",
+      "additionalProperties": { "$ref": "path-item.json" }
+    }
+  },
+  "patternProperties": {
+    "^(schemas|responses|parameters|examples|requestBodies|headers|securitySchemes|links|callbacks|pathItems)$": {
+      "$comment": "Enumerating all of the property names in the regex above is necessary for unevaluatedProperties to work as expected",
+      "propertyNames": { "pattern": "^[a-zA-Z0-9._-]+$" }
+    }
+  },
+  "$ref": "specification-extensions.json",
+  "unevaluatedProperties": false
+}

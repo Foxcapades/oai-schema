@@ -1,0 +1,31 @@
+= OAI Schema Components
+
+OpenAPI specification JSON schema broken down into separately referenceable
+components for use in modular API definition files.
+
+Presently, to create a fragment file for reference in an OAI API definition,
+there is no valid way to reference an individual component as a `$schema` URI.
+This prevents validation by editors or tooling at an individual fragment level.
+Breaking the core OpenAPI schema `$defs` entries into individual schema files
+allows referencing them in a fragment's `$schema` definition.
+
+
+.Invalid `$schema` URI
+[source, json]
+----
+{
+  "$schema": "https://schemas.sourcemeta.com/openapi/v3.1/schema/2022-10-07.json#/$defs/response",
+  "description": "blah",
+  "content": { ... }
+}
+----
+
+.Usable `$schema` URI
+[source, json]
+----
+{
+  "$schema": "https://foxcapades.github.io/oai-schema/3.1.1/2025-02-03/response.json",
+  "description": "blah",
+  "content": { ... }
+}
+----

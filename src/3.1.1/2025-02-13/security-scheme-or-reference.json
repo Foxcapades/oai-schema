@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "if": {
+    "type": "object",
+    "required": [ "$ref" ]
+  },
+  "then": { "$ref": "reference.json" },
+  "else": { "$ref": "security-scheme.json" }
+}

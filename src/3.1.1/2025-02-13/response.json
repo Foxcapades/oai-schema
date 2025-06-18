@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "https://spec.openapis.org/oas/v3.1#response-object",
+  "type": "object",
+  "properties": {
+    "description": { "type": "string" },
+    "headers": {
+      "type": "object",
+      "additionalProperties": { "$ref": "header-or-reference.json" }
+    },
+    "content": { "$ref": "content.json" },
+    "links": {
+      "type": "object",
+      "additionalProperties": { "$ref": "link-or-reference.json" }
+    }
+  },
+  "required": [ "description" ],
+  "$ref": "specification-extensions.json",
+  "unevaluatedProperties": false
+}

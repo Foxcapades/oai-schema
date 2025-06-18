@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "https://spec.openapis.org/oas/v3.1#link-object",
+  "type": "object",
+  "properties": {
+    "operationRef": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "operationId": { "type": "string" },
+    "parameters": { "$ref": "map-of-strings.json" },
+    "requestBody": true,
+    "description": { "type": "string" },
+    "body": { "$ref": "server.json" }
+  },
+  "oneOf": [
+    { "required": [ "operationRef" ] },
+    { "required": [ "operationId" ] }
+  ],
+  "$ref": "specification-extensions.json",
+  "unevaluatedProperties": false
+}
